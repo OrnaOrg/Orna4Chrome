@@ -1,0 +1,26 @@
+{
+ 
+  "manifest_version": 2,
+  "name": "OrnaJS",
+  "version": "0.3.2",
+  "description": "Orna - Atomic CSS Parser. Good tool for web developer!",
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+             "128": "icon128.png" },
+  "author": "Dima Popov",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>", "file://*/*"],
+      "js": ["jquery-1.12.0.js","background.js"],
+      "run_at": "document_end"
+
+    }
+  ],
+  "homepage_url": "http://ornaorg.github.io/",
+     "web_accessible_resources": [
+    
+         "/jquery-1.12.0.js",
+         "/orna-0.3.2.js"
+  ]
+ 
+}
