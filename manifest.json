@@ -2,7 +2,7 @@
  
   "manifest_version": 2,
   "name": "OrnaJS",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "Orna - Atomic CSS Parser. Good tool for web developer!",
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
@@ -11,7 +11,7 @@
   "content_scripts": [
     {
       "matches": ["*://orna/*", "file:///*/orna*"],
-      "js": ["jquery-1.12.0.js","background.js"],
+      "js": ["jquery-2.2.0.js","background.js"],
       "run_at": "document_end"
 
     }
@@ -19,8 +19,8 @@
   "homepage_url": "http://ornaorg.github.io/",
      "web_accessible_resources": [
     
-         "/jquery-1.12.0.js",
-         "/orna-0.3.4.js"
+         "/jquery-2.2.0.js",
+         "/orna-0.4.0.js"
   ]
  
 }
