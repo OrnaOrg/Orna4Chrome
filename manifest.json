@@ -2,7 +2,7 @@
  
   "manifest_version": 2,
   "name": "OrnaJS",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Orna - Atomic CSS Parser. Good tool for web developer!",
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
@@ -20,7 +20,7 @@
      "web_accessible_resources": [
     
          "/jquery-2.2.0.js",
-         "/orna-0.6.0.js"
+         "/orna-0.7.0.js"
   ]
  
 }

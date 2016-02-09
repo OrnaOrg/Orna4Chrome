@@ -1,4 +1,5 @@
 //https://github.com/OrnaOrg/OrnaJS
+//http://ornaorg.github.io
 /*------------------createatom();----Main-and-singular-function---------------------*/
 $(document).ready(function() {
     createatom();
@@ -119,7 +120,7 @@ function createatom(id) {
                 if (part[0] == "hideatom") {
                     break;
                 } else if (part[0] == "ornahelp") {
-                    var helpinfo = '<div id="ornahelp"><h2  align="center">Orna - tool for Atomic CSS.</h2> <p>Just write CSS like classes, class="width_100px color_red color_green_click"</p><h3>Structure</h3><p>property_value</p><p>property_value_event</p><p>property_value_childtagname</p><p>property_value_event_childtagname</p><h3>Events</h3><p>click</p><p>focus</p><p>blur</p><p>mouseover</p><p>mouseout</p><h3>Special classes</h3><ol><li>Arial, arial - font</li><br><li>Times, TimesNewRoman - font</li><br><li>center - block elements in center by x axis</li><br><li>textincenter - text and inline elements in center by x axis</li><br><li>block - block element</li><br><li>inline - inline element</li><br><li>inlineblock - inline-block element</li><br><li>uppercase - text in uppercase</li><br><li>lowercase - text in lowercase</li><br><li>capitalize - first symbol in uppercase</li><br><li>hideatom - use for hide element from Orna, must be first in class attribute</li><br><li>flexcenter-, flexstart-, flexend-, flexcenter|, flexstart|, flexend| - use for flexbox</li><br><li>ornahelp - view the help info</li><br></ol><a href="http://ornaorg.github.io" style="text-decoration:none; color:#ee0645">ornaorg.github.io</a><div>';
+                    var helpinfo = '<div id="ornahelp"><h2  align="center">Orna - tool for Atomic CSS.</h2> <p>Just write CSS like classes, class="width_100px color_red color_green_click"</p><h3>Structure</h3><p>property_value</p><p>property_value_event</p><p>property_value_childtagname</p><p>property_value_event_childtagname</p><p>property_value_childtagname_event</p><h3>Events</h3><p>click</p><p>focus</p><p>blur</p><p>mouseover</p><p>mouseout</p><h3>Special classes</h3><ol><li>Arial, arial - font</li><br><li>Times, TimesNewRoman - font</li><br><li>center - block elements in center by x axis</li><br><li>textincenter - text and inline elements in center by x axis</li><br><li>block - block element</li><br><li>inline - inline element</li><br><li>inlineblock - inline-block element</li><br><li>uppercase - text in uppercase</li><br><li>lowercase - text in lowercase</li><br><li>capitalize - first symbol in uppercase</li><br><li>hideatom - use for hide element from Orna, must be first in class attribute</li><br><li>flexcenter-, flexstart-, flexend-, flexcenter|, flexstart|, flexend| - use for flexbox</li><br><li>ornahelp - view the help info</li><br></ol><a href="http://ornaorg.github.io" style="text-decoration:none; color:#ee0645">ornaorg.github.io</a><div>';
                     $(current).append(helpinfo);
                     $('#ornahelp').css('background-color', 'rgb(220,220,220)');
                     $('#ornahelp').css('color', 'black');
@@ -194,7 +195,7 @@ function createatom(id) {
                         delete part[5];
                         addstyle(part, val);
                     }
-                } else if (part[0] == "border" && val !== "none") {
+                } else if (part[0] == "border" && val !== "none" || part[0] == "b" && val !== "none") {
                     if (val !== undefined) {
                         if (part[2] === undefined || part[3] === undefined) {
                             alert("Hi! I'm Orna! Atomic class border need three values width, color and style");
@@ -212,7 +213,7 @@ function createatom(id) {
                         }
                         addstyle(part, val);
                     }
-                } else if (part[0] == "border-left") {
+                } else if (part[0] == "border-left" && val !== "none" || part[0] == "bl" && val !== "none") {
                     if (val !== undefined) {
                         if (part[2] === undefined || part[3] === undefined) {
                             alert("Hi! I'm Orna! Atomic class border-left need three values width, color and style");
@@ -230,7 +231,7 @@ function createatom(id) {
                         }
                         addstyle(part, val);
                     }
-                } else if (part[0] == "border-right") {
+                } else if (part[0] == "border-right" && val !== "none" || part[0] == "br" && val !== "none") {
                     if (val !== undefined) {
                         if (part[2] === undefined || part[3] === undefined) {
                             alert("Hi! I'm Orna! Atomic class border-right need three values width, color and style");
@@ -248,7 +249,7 @@ function createatom(id) {
                         }
                         addstyle(part, val);
                     }
-                } else if (part[0] == "border-top") {
+                } else if (part[0] == "border-top" && val !== "none" || part[0] == "bt" && val !== "none") {
                     if (val !== undefined) {
                         if (part[2] === undefined || part[3] === undefined) {
                             alert("Hi! I'm Orna! Atomic class border-top need three values width, color and style");
@@ -266,7 +267,7 @@ function createatom(id) {
                         }
                         addstyle(part, val);
                     }
-                } else if (part[0] == "border-bottom") {
+                } else if (part[0] == "border-bottom" && val !== "none" || part[0] == "bb" && val !== "none") {
                     if (val !== undefined) {
                         if (part[2] === undefined || part[3] === undefined) {
                             alert("Hi! I'm Orna! Atomic class border-bottom need three values width, color and style");
@@ -322,6 +323,71 @@ function createatom(id) {
                 } else if (part[0] == "bgr") {
                     if (val !== undefined) {
                         part[0] = 'background-repeat';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "h") {
+                    if (val !== undefined) {
+                        part[0] = 'height';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "w") {
+                    if (val !== undefined) {
+                        part[0] = 'width';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "c") {
+                    if (val !== undefined) {
+                        part[0] = 'color';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "p") {
+                    if (val !== undefined) {
+                        part[0] = 'padding';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "pl") {
+                    if (val !== undefined) {
+                        part[0] = 'padding-left';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "pr") {
+                    if (val !== undefined) {
+                        part[0] = 'padding-right';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "pt") {
+                    if (val !== undefined) {
+                        part[0] = 'padding-top';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "pb") {
+                    if (val !== undefined) {
+                        part[0] = 'padding-bottom';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "m") {
+                    if (val !== undefined) {
+                        part[0] = 'margin';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "ml") {
+                    if (val !== undefined) {
+                        part[0] = 'margin-left';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "mr") {
+                    if (val !== undefined) {
+                        part[0] = 'margin-right';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "mt") {
+                    if (val !== undefined) {
+                        part[0] = 'margin-top';
+                        addstyle(part, val);
+                    }
+                } else if (part[0] == "mb") {
+                    if (val !== undefined) {
+                        part[0] = 'margin-bottom';
                         addstyle(part, val);
                     }
                 } else if (part[0] == "transition" || part[0] == "tran") {
