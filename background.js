@@ -6,7 +6,7 @@ $.get(chrome.extension.getURL("/jquery-2.2.0.js"),
 		document.getElementsByTagName("head")[0].appendChild(script);
 	}
 );
-$.get(chrome.extension.getURL('/orna-0.7.5.js'), 
+$.get(chrome.extension.getURL('/orna.js'), 
 	function(data) {
 		var script = document.createElement("script");
 		script.setAttribute("type", "text/javascript");
