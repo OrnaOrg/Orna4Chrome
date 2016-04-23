@@ -1,6 +1,6 @@
 //https://github.com/OrnaOrg/OrnaJS
 //http://ornaorg.github.io
-//version ornajs 2.2.5
+//version ornajs 2.3.5
 //bower install OrnaJS
 /*------------------createatom();----Main-and-singular-function---------------------*/
 $(document).ready(function() {
@@ -37,7 +37,11 @@ function createatom(id) {
                 var part = style[i].split('_');
                 var prop = part[0];
                 var val = part[1];
-
+                //---------------------------------------
+                function addpack(pack) {
+                        $(current).css(pack);
+                    }
+                    //---------------------------------------
                 function addstyle(part, val) {
                     if (val !== undefined) {
                         /*----1--check------*/
@@ -537,6 +541,28 @@ function createatom(id) {
                 } else {
                     addstyle(part, val);
                 }
+                /*--------------Add-pack---------------*/
+                if (part[0] == "clear" || part[0] == "clean") {
+                    var pack = {
+                        "top": 0,
+                        "bottom": 0,
+                        "left": 0,
+                        right: 0
+                    };
+                    addpack(pack);
+                } else if (part[0] == "orna-btn") {
+                    var pack = {
+                        display: 'inline',
+                        "overflow": 'hidden',
+                        textAlign: 'center',
+                        border: '1px solid',
+                        color: 'white',
+                        backgroundColor: '#ee0645',
+                        padding: '10px',
+                        cursor: 'pointer'
+                    };
+                    addpack(pack);
+                }
                 /*--------------Special-classes---------------*/
                 if (part[0] == "Arial" || part[0] == "arial") {
                     if (part[1] !== undefined) {
@@ -932,5 +958,14 @@ function createatom(id) {
                 }
             }
         }
+    }
+    //--Add-move-(to-live)-
+    if($('.orna-btn').length>0){
+        $('.orna-btn').on('mouseover', function(){
+           $(this).css('background-color', 'rgb(83, 2, 24)'); 
+        });
+        $('.orna-btn').on('mouseleave', function(){
+           $(this).css('background-color', '#ee0645'); 
+        });
     }
 }
