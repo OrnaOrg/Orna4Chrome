@@ -1,4 +1,4 @@
-$.get(chrome.extension.getURL("/jquery-2.2.0.js"), 
+$.get(chrome.extension.getURL("/jquery.js"), 
 	function(data) {
 		var script = document.createElement("script");
 		script.setAttribute("type", "text/javascript");
